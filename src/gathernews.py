@@ -5,8 +5,8 @@ import nltk
 from newspaper import Article
 
 def Input():
-	userinput = input("Please enter any keyword(press enter to continue): ")
-	print(userInput)
+	userInput = input("Please enter any keyword(press enter to continue): ")
+	return userInput
 	
 
 def SearchArticle(url):
@@ -22,16 +22,13 @@ def SearchArticle(url):
 	Authors = article.authors
 	Title = article.title
 
-
 	Summary = article.summary
 
 	DocumentArticle(Title, Authors, Summary)
 
 def DocumentArticle(Title, Author, Summary):
 	Document = open('news_summary.txt', 'w')
-	#print(Title + " - " + Author[0])
 	Document.write(Title + " - " + Author[0])
-	#print(Summary)
 	Document.write(Summary)
 	Document.close()
 
